@@ -1,0 +1,197 @@
+/*
+const screen_sizes = [0, 576, 768, 992, 1200];
+const screen_sizes_names = ['xs', 'sm', 'md', 'lg', 'xl'];
+*/
+/*################################################################
+Body
+*/
+
+html, body{
+    height: 100%;
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body > *{
+}
+
+/*================================
+Background
+*/
+
+body > #background{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    /*Visuals*/
+    display: flex;
+    justify-content: center;
+}
+
+/*================================
+Background
+*/
+
+body > #backgroundWindow{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+
+    /*Visuals*/
+    background-color: rgba(255, 255, 255, 0.618);
+    border: 0.1rem solid black;
+    border-top: 0.1rem solid black;
+}
+
+/*================================
+Header
+*/
+
+body > header{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    width: 100%;
+    /*Visuals*/
+    background-color: white;
+    border-bottom: 0.1rem solid black;
+
+}
+
+/*================================
+Navbar
+*/
+
+body > nav{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    width: 100%;
+    /*Visuals*/
+    background-color: rgba(255, 255, 255, 0.75);
+    border-bottom: 0.1rem solid black;
+    /*Elements*/
+    display: flex;
+}
+
+
+/*================================
+Footer
+*/
+
+body > footer{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    /*Visuals*/
+    border-top: 0.1rem solid black;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/*################################################################
+Navbar
+*/
+
+/*================================
+Avatar
+*/
+
+body > nav #avatar{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: fit-content;
+    max-width: fit-content;
+    max-height: 168px;
+    padding: 0.5rem 1rem;
+}
+@media (max-width: 576px) {
+body > nav #avatar {
+    display: none;
+}}
+
+/*================================
+Side content
+*/
+
+body > nav header{
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+body > nav p{
+    font-style: italic;
+    font-size:medium;
+}
+
+body > nav a{
+    display: inline-block;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+    background-color: black;
+    padding: 0.2rem;
+    margin: 0.2rem;
+}
+
+/*================================
+Division
+*/
+
+body > nav > div{
+    margin-top: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+/*################################################################
+Main
+*/
+
+main{
+    max-width: 1024px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+    padding: 0 1rem; /* padding inside main to avoid content touching edges */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+main > *{
+    margin: 1rem 0;       /* vertical margin only */
+    box-sizing: border-box;
+    max-width: 100%;      /* prevent child from exceeding main */
+}
+
+/*================================
+Article
+-horizontal margin will reach beyound the content
+*/
+
+main > article{
+    width: 100%;          /* fill width minus padding of main */
+    padding: 1rem;
+    outline: 0.1rem solid black;
+}
+
