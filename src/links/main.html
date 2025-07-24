@@ -1,46 +1,84 @@
 <style>
     
 article > section{
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 article > section > div{
-    border: 1px solid white;
+    outline: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.618);
     margin: 1rem;
     padding: 1rem;
-    height: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
+    height: max-content;
+    align-items: center;
+    width: calc(100% / 5 - (2 * 1rem + 2 * 1rem));
 }
+/*
+const screen_sizes = [0, 576, 768, 992, 1200];
+const screen_sizes_names = ['xs', 'sm', 'md', 'lg', 'xl'];
+*/
+
+@media (max-width: 992px) {
+article > section > div {
+    width: calc(100% / 4 - (2 * 1rem + 2 * 1rem));
+}}
+@media (max-width: 768px) {
+article > section > div {
+    width: calc(100% / 3 - (2 * 1rem + 2 * 1rem));
+}}
+@media (max-width: 576px) {
+article > section > div {
+    width: calc(100% / 2 - (2 * 1rem + 2 * 1rem));
+}}
+
 
 article > section > div > a {
+    width: 100%;
     color: white;
-    display: block;
     text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    height: 100%;
 }
 
 article > section > div > a > img {
     width: 100%;
+    max-width: 48px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
 }
 
-article > ul {
+article > section > div > a > label {
+    display: block;
     width: 100%;
 }
 
-article > ul > li {
-    margin-bottom: 1rem;
-    width: 100%;
+article > table{
+    border-spacing: 0 1rem;
 }
 
-article > ul > li > a{
-    display: inline-block;
+article > table  tr{
+    padding-bottom: 1rem;
+}
+
+article > table  tr > td:first-child {
+    width: max-content;
+    display: block;
+    padding-right: 1rem;
+}
+
+article > table  tr > td > a{
     font-family: 'Courier New', Courier, monospace;
     color: yellow;
-    width: 100%;
-    max-width: 256px;
     word-break: break-all;
-    margin-left: auto;
+    text-align: right;
 }
 
 </style>
@@ -50,23 +88,85 @@ article > ul > li > a{
     <section>
         <div>
             <a target="_blank" href="https://medium.com/@dataram57" >
-                <img class="img-fluid " src="https://dataram57.com/img/media-md-medium.png">
+                <img src="https://dataram57.com/img/media-md-medium.png">
                 <label>Medium</label>
             </a>
         </div>
         <div>
-            <a target="_blank" href="https://medium.com/@dataram57">
-                <img class="img-fluid " src="https://dataram57.com/img/media-md-medium.png">
-                <label>Medium</label>
+            <a target="_blank" href="https://dataram57.neocities.org/">
+                <img src="https://dataram57.com/img/media-md-neocities.png">
+                <label>NeoCities</label>
+            </a>
+        </div>
+        <div>
+            <a target="_blank" href="https://www.artstation.com/dataram57">
+                <img src="https://dataram57.com/img/media-md-artstation.png">
+                <label>ArtStation</label>
+            </a>
+        </div>
+        <div>
+            <a target="_blank" href="https://github.com/Dataram57/">
+                <img src="https://dataram57.com/img/media-md-github.png">
+                <label>GitHub</label>
+            </a>
+        </div>
+        <div>
+            <a style="color: red;" target="_blank" href="https://www.youtube.com/dataram57">
+                <img src="https://dataram57.com/img/media-md-youtube.png">
+                <label>YouTube</label>
+            </a>
+        </div>
+        <div>
+            <a style="color: orange;" target="_blank" href="https://soundcloud.com/dataram57">
+                <img src="https://dataram57.com/img/media-md-soundcloud.png">
+                <label>SoundCloud</label>
+            </a>
+        </div>
+        <div>
+            <a style="color: crimson;" target="_blank" href="https://dataram-57.itch.io/">
+                <img src="https://dataram57.com/img/media-md-itch_io.png">
+                <label>Itch.Io</label>
+            </a>
+        </div>
+        <div>
+            <a style="color: greenyellow;" target="_blank" href="https://gamejolt.com/@Dataram57">
+                <img src="https://dataram57.com/img/media-md-gamejolt.png">
+                <label>Game Jolt</label>
             </a>
         </div>
     </section>
     <h1>Crypto Links:</h1>
-    <ul>
-        <li>BTC: <a target="_blank" href="https://www.blockchain.com/explorer/addresses/btc/bc1qj23fqlzffxlncy70j6vd9zt2228nudhhe5v664">bc1qj23fqlzffxlncy70j6vd9zt2228nudhhe5v664</a></li>
-        <li>ETH (Ethereum): <a target="_blank" href="https://etherscan.io/address/0x68052a750Bb91eAdf9945eA864DF89e9b7Fd5DBE">0x68052a750Bb91eAdf9945eA864DF89e9b7Fd5DBE</a></li>
-        <li>ALGO: <a target="_blank" href="https://explorer.perawallet.app/address/5LP6DY2T5PQWFPVG7DEPL267WLWXYE52EK6YLUGSS3KKEEQUUZHVFQXHKM/">5LP6DY2T5PQWFPVG7DEPL267WLWXYE52EK6YLUGSS3KKEEQUUZHVFQXHKM</a></li>
-        <li>XMR: <a target="_blank">85HQwsKwBjnbzqm2wKzVzpWU52b8zR5P1DEbsWnHJDypAM4Z29nCQBT8LXC4KmMofb4uHkFdgFLEF7CqMBeGWFzV9FmDaPN</a></li>
-    </ul>
+    <table>
+        <tr>
+            <td>BTC:<td>
+            <td><a target="_blank" href="https://www.blockchain.com/explorer/addresses/btc/bc1qj23fqlzffxlncy70j6vd9zt2228nudhhe5v664">bc1qj23fqlzffxlncy70j6vd9zt2228nudhhe5v664</a></td>
+        </tr>
+        <tr>
+            <td>ETH (Ethereum):<td>
+            <td><a target="_blank" href="https://etherscan.io/address/0x68052a750Bb91eAdf9945eA864DF89e9b7Fd5DBE">0x68052a750Bb91eAdf9945eA864DF89e9b7Fd5DBE</a></td>
+        </tr>
+        <tr>
+            <td>ALGO:<td>
+            <td><a target="_blank" href="https://explorer.perawallet.app/address/5LP6DY2T5PQWFPVG7DEPL267WLWXYE52EK6YLUGSS3KKEEQUUZHVFQXHKM/">5LP6DY2T5PQWFPVG7DEPL267WLWXYE52EK6YLUGSS3KKEEQUUZHVFQXHKM</a></td>
+        </tr>
+        <tr>
+            <td>XMR:<td>
+            <td><a target="_blank">85HQwsKwBjnbzqm2wKzVzpWU52b8zR5P1DEbsWnHJDypAM4Z29nCQBT8LXC4KmMofb4uHkFdgFLEF7CqMBeGWFzV9FmDaPN</a></td>
+        </tr>
+    </table>
     <h1>Old / Inactive:</h1>
+    <section>
+        <div>
+            <a target="_blank" href="https://www.slipseer.com/index.php?members/dataram57.225/" >
+                <img src="https://dataram57.com/img/media-md-slipseer.png">
+                <label>Slipgate Sightseer</label>
+            </a>
+        </div>
+        <div>
+            <a style="color: cornflowerblue;" target="_blank" href="https://twitter.com/Dataram_57" >
+                <img src="https://dataram57.com/img/media-md-twitter.png">
+                <label>Twitter</label>
+            </a>
+        </div>
+    </section>
 </article>
