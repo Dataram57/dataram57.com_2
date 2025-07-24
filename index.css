@@ -9,6 +9,7 @@ Body
 html, body{
     height: 100%;
     margin: 0;
+    /*Visuals*/
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -16,11 +17,13 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    /*Visuals*/
     background-color: white;
     color: black;
 }
 
 body.dark-mode{
+    /*Visuals*/
     background-color: black;
     color: white;
 }
@@ -34,7 +37,6 @@ body > #background{
     height: 100vh;
     position: fixed;
     z-index: -1;
-    /*Visuals*/
     display: flex;
     justify-content: center;
 }
@@ -46,15 +48,15 @@ Background
 body > #backgroundWindow{
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    position: fixed;
+    inset: 0;
+    transform: none;
     margin-left: auto;
     margin-right: auto;
     max-width: 1024px;
     width: 100%;
     height: 100vh;
-    position: absolute;
     z-index: -1;
-
     /*Visuals*/
     background-color: rgba(255, 255, 255, 0.618);
     border: 0.1rem solid black;
@@ -62,6 +64,7 @@ body > #backgroundWindow{
 }
 
 body.dark-mode > #backgroundWindow{
+    /*Visuals*/
     background-color: rgba(0, 0, 0, 0.618);
     border: 0.1rem solid white;
     border-top: 0.1rem solid white;
@@ -84,6 +87,7 @@ body > header{
 }
 
 body.dark-mode > header{
+    /*Visuals*/
     background-color: black;
     border-bottom: 0.1rem solid white;
     text-align: center;
@@ -103,9 +107,12 @@ body > nav{
     border-bottom: 0.1rem solid black;
     /*Elements*/
     display: flex;
+    align-items: stretch;
+    position: relative;
 }
 
 body.dark-mode > nav{
+    /*Visuals*/
     background-color: rgba(0, 0, 0, 0.618);
     border-bottom: 0.1rem solid white;
 }
@@ -129,6 +136,7 @@ body > footer{
 }
 
 body.dark-mode > footer{
+    /*Visuals*/
     border-top: 0.1rem solid white;
     background-color: rgba(0, 0, 0, 0.618);
 }
@@ -152,7 +160,17 @@ body > nav #avatar{
 }
 @media (max-width: 576px) {
 body > nav #avatar {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(calc(100vw - 100% - 1rem), -50%);
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.618;
+    
 }}
 
 /*================================
@@ -166,20 +184,22 @@ body > nav header{
 
 body > nav p{
     font-style: italic;
-    font-size:medium;
+    font-size: medium;
 }
 
 body > nav a{
     display: inline-block;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    /*Visuals*/
     font-weight: bold;
     font-size: larger;
     color: white;
     background-color: black;
-    padding: 0.2rem;
-    margin: 0.2rem;
 }
 
 body.dark-mode > nav a{
+    /*Visuals*/
     color: black;
     background-color: white;
 }
@@ -204,17 +224,14 @@ main{
     margin-left: auto;
     margin-right: auto;
     flex: 1;
-    padding: 0 1rem; /* padding inside main to avoid content touching edges */
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem;
 }
 
-main > *{
-    margin: 1rem 0;       /* vertical margin only */
-    box-sizing: border-box;
-    max-width: 100%;      /* prevent child from exceeding main */
-}
 
 /*================================
 Article
@@ -222,8 +239,11 @@ Article
 */
 
 main > article{
-    width: 100%;          /* fill width minus padding of main */
+    margin: 0.5rem 1rem;
+    max-width: calc(100% - 2 * 1rem - 2 * 1rem);
+    width: 100%;
     padding: 1rem;
+    /*Visuals*/
     outline: 0.1rem solid black;
     background-color: rgba(255, 255, 255, 0.618);
 }
@@ -231,6 +251,7 @@ main > article{
 
 body.dark-mode
 main > article{
+    /*Visuals*/
     outline: 0.1rem solid white;
     background-color: rgba(0, 0, 0, 0.618);
 }
