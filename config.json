@@ -1,6 +1,7 @@
 {
     "sourcePath": "src"
     ,"bakePath": "result"
+    ,"templatePath": "index.html"
     ,"scripts": [
         "bake_md.py"
     ]
