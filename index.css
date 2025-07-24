@@ -16,9 +16,13 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: white;
+    color: black;
 }
 
-body > *{
+body.dark-mode{
+    background-color: black;
+    color: white;
 }
 
 /*================================
@@ -57,6 +61,12 @@ body > #backgroundWindow{
     border-top: 0.1rem solid black;
 }
 
+body.dark-mode > #backgroundWindow{
+    background-color: rgba(0, 0, 0, 0.618);
+    border: 0.1rem solid white;
+    border-top: 0.1rem solid white;
+}
+
 /*================================
 Header
 */
@@ -69,7 +79,14 @@ body > header{
     /*Visuals*/
     background-color: white;
     border-bottom: 0.1rem solid black;
+    text-align: center;
 
+}
+
+body.dark-mode > header{
+    background-color: black;
+    border-bottom: 0.1rem solid white;
+    text-align: center;
 }
 
 /*================================
@@ -82,10 +99,15 @@ body > nav{
     max-width: 1024px;
     width: 100%;
     /*Visuals*/
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.618);
     border-bottom: 0.1rem solid black;
     /*Elements*/
     display: flex;
+}
+
+body.dark-mode > nav{
+    background-color: rgba(0, 0, 0, 0.618);
+    border-bottom: 0.1rem solid white;
 }
 
 
@@ -102,8 +124,13 @@ body > footer{
     padding-bottom: 0.5rem;
     /*Visuals*/
     border-top: 0.1rem solid black;
+    background-color: rgba(255, 255, 255, 0.618);
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.75);
+}
+
+body.dark-mode > footer{
+    border-top: 0.1rem solid white;
+    background-color: rgba(0, 0, 0, 0.618);
 }
 
 /*################################################################
@@ -152,6 +179,11 @@ body > nav a{
     margin: 0.2rem;
 }
 
+body.dark-mode > nav a{
+    color: black;
+    background-color: white;
+}
+
 /*================================
 Division
 */
@@ -193,5 +225,12 @@ main > article{
     width: 100%;          /* fill width minus padding of main */
     padding: 1rem;
     outline: 0.1rem solid black;
+    background-color: rgba(255, 255, 255, 0.618);
 }
 
+
+body.dark-mode
+main > article{
+    outline: 0.1rem solid white;
+    background-color: rgba(0, 0, 0, 0.618);
+}
