@@ -42,10 +42,10 @@ body > #background{
 }
 
 /*================================
-Background
+Background Window
 */
 
-body > #backgroundWindow{
+body > #background_window{
     top: 50%;
     left: 50%;
     position: fixed;
@@ -63,7 +63,7 @@ body > #backgroundWindow{
     border-top: 0.1rem solid black;
 }
 
-body.dark-mode > #backgroundWindow{
+body.dark-mode > #background_window{
     /*Visuals*/
     background-color: rgba(0, 0, 0, 0.618);
     border: 0.1rem solid white;

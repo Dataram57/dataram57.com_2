@@ -1,13 +1,35 @@
+import os
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-def Process(path, soup):
+def GetContent(path):
+    with open(path, "r", encoding="utf-8") as file:
+        s = file.read()
+    if s:
+        return s
+    return False
+    
+
+def Process(sourcePath, soup):
     print("Processing...")
 
-    element = soup.find("main")
-    if element:
-        element.clear()
-        element.append(BeautifulSoup("<p>New content goes here</p>", "html.parser"))
+    #funcs
+    def TryReplaceElement(name, element):
+        if element:
+            path = sourcePath / name
+            if path.is_file():
+                content = GetContent(path)         
+                if content:
+                    element.clear()
+                    element.append(BeautifulSoup(content, "html.parser"))
+
+    #basic ones
+    TryReplaceElement("background.html", soup.find(id="background"))
+    TryReplaceElement("background_window.html", soup.find(id="background_window"))
+    TryReplaceElement("header.html", soup.find("header"))
+    TryReplaceElement("nav.html", soup.find("nav"))
+    TryReplaceElement("main.html", soup.find("main"))
+    TryReplaceElement("footer.html", soup.find("footer"))
 
     #return
     return soup
