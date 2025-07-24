@@ -31,14 +31,15 @@ with open(templatePath, "r", encoding="utf-8") as file:
             toCopy.append(href)
             tag["href"] = f"/{href}"
     #script
-    for tag in soup.find_all("script", href=True):
+    for tag in soup.find_all("script", src=True):
         href = tag["src"]
+        print(tag)
         # Skip absolute URLs or already rewritten ones
         if not href.startswith(("http://", "https://", "/", "#")):
             toCopy.append(href)
             tag["src"] = f"/{href}"
     #img
-    for tag in soup.find_all("img", href=True):
+    for tag in soup.find_all("img", src=True):
         href = tag["src"]
         # Skip absolute URLs or already rewritten ones
         if not href.startswith(("http://", "https://", "/", "#")):

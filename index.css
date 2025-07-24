@@ -22,7 +22,8 @@ body{
     color: black;
 }
 
-body.dark-mode{
+.dark-mode
+body{
     /*Visuals*/
     background-color: black;
     color: white;
@@ -63,7 +64,8 @@ body > #background_window{
     border-top: 0.1rem solid black;
 }
 
-body.dark-mode > #background_window{
+.dark-mode
+#background_window{
     /*Visuals*/
     background-color: rgba(0, 0, 0, 0.618);
     border: 0.1rem solid white;
@@ -86,7 +88,8 @@ body > header{
 
 }
 
-body.dark-mode > header{
+.dark-mode
+header{
     /*Visuals*/
     background-color: black;
     border-bottom: 0.1rem solid white;
@@ -111,7 +114,8 @@ body > nav{
     position: relative;
 }
 
-body.dark-mode > nav{
+.dark-mode
+nav{
     /*Visuals*/
     background-color: rgba(0, 0, 0, 0.618);
     border-bottom: 0.1rem solid white;
@@ -136,7 +140,8 @@ body > footer{
     text-align: center;
 }
 
-body.dark-mode > footer{
+.dark-mode
+footer{
     /*Visuals*/
     border-top: 0.1rem solid white;
     background-color: rgba(0, 0, 0, 0.618);
@@ -199,7 +204,8 @@ body > nav a{
     background-color: black;
 }
 
-body.dark-mode > nav a{
+.dark-mode
+nav a{
     /*Visuals*/
     color: black;
     background-color: white;
@@ -266,9 +272,23 @@ main > article {
     max-width: 100%;
 }}
 
-body.dark-mode
+.dark-mode
 main > article{
     /*Visuals*/
     outline: 0.1rem solid white;
     background-color: rgba(0, 0, 0, 0.618);
+}
+
+/*################################################################
+Dark mode button
+*/
+
+#dark_mode_button{
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+.dark-mode
+#dark_mode_button{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }

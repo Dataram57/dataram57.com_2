@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
+        <!---------------------->
+        <!-- Dark Mode Button -->
+        <script>
+            switch(window.localStorage.getItem("dark_mode")){
+                case undefined:window.localStorage.setItem('dark_mode', true);break;
+                case 'false':document.documentElement.classList.toggle("dark-mode");break;
+            }
+        </script>
+        <script src="dark_mode_button.js"></script>
+        <!---------------------->
         <title>Document</title>
     </head>
-    <body class="dark-mode">
+    <body>
         <div id="background">
             <img src="https://bandurart.com/wp-content/uploads/2024/05/what-is-a-1-bit-game.jpg">
         </div>
         <div id="background_window"></div>
-        <header>🌠 The flow is based on something...</header>
+        <header>
+            🌠 The flow is based on something...
+            <a id="dark_mode_button">[Night mode]</a>
+        </header>
         <nav>
             <img id='avatar' src="https://avatars.githubusercontent.com/u/70971306?v=4">
             <div>
