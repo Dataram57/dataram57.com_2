@@ -20,6 +20,7 @@ if not config:
     exit()
 
 #convert template
+toCopy = []
 with open(templatePath, "r", encoding="utf-8") as file:
     soup = BeautifulSoup(file, "html.parser")
     #link
@@ -27,24 +28,36 @@ with open(templatePath, "r", encoding="utf-8") as file:
         href = tag["href"]
         # Skip absolute URLs or already rewritten ones
         if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
             tag["href"] = f"/{href}"
     #script
     for tag in soup.find_all("script", href=True):
         href = tag["src"]
         # Skip absolute URLs or already rewritten ones
         if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
             tag["src"] = f"/{href}"
     #img
     for tag in soup.find_all("img", href=True):
         href = tag["src"]
         # Skip absolute URLs or already rewritten ones
         if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
             tag["src"] = f"/{href}"
     #save into a new template
     templatePath = templatePath + ".temp"
     with open(templatePath, "w", encoding="utf-8") as f:
         f.write(str(soup))
     soup = False
+
+for path in toCopy:
+    outputPath = (Path(bakePath) / path)
+    dirPath = (outputPath / "..").resolve()
+    if not dirPath.exists():
+        os.makedirs(dirPath)
+    dirPath = (Path(templatePath) / "..").resolve() / path
+    print(f"Copying {dirPath} ==== {outputPath}")
+    shutil.copy(dirPath, outputPath)
 
 #load main html file
 def LoadTemplate():
@@ -103,4 +116,5 @@ for path in elems:
             if hasattr(module, "End"):
                 module.End(path)
 
-
+#remove temp template
+os.remove(templatePath)
