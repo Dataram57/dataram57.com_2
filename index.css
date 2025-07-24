@@ -123,6 +123,7 @@ Footer
 */
 
 body > footer{
+    margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     max-width: 1024px;
@@ -230,6 +231,13 @@ main{
     justify-content: center;
     align-items: flex-start;
     padding: 0.5rem;
+    display: flex;
+    
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: none;
 }
 
 
@@ -241,6 +249,7 @@ Article
 main > article{
     margin: 0.5rem 1rem;
     max-width: calc(100% - 2 * 1rem - 2 * 1rem);
+    min-width: max-content;
     width: 100%;
     padding: 1rem;
     /*Visuals*/
