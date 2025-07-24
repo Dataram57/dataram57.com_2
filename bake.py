@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 from bs4 import BeautifulSoup
 import process_template
+import shutil
 
 #load config
 bakePath = False
@@ -17,6 +18,33 @@ with open("config.json", "r", encoding="utf-8") as file:
 if not config:
     print("Couldn't load config")
     exit()
+
+#convert template
+with open(templatePath, "r", encoding="utf-8") as file:
+    soup = BeautifulSoup(file, "html.parser")
+    #link
+    for tag in soup.find_all("link", href=True):
+        href = tag["href"]
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            tag["href"] = f"/{href}"
+    #script
+    for tag in soup.find_all("script", href=True):
+        href = tag["src"]
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            tag["src"] = f"/{href}"
+    #img
+    for tag in soup.find_all("img", href=True):
+        href = tag["src"]
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            tag["src"] = f"/{href}"
+    #save into a new template
+    templatePath = templatePath + ".temp"
+    with open(templatePath, "w", encoding="utf-8") as f:
+        f.write(str(soup))
+    soup = False
 
 #load main html file
 def LoadTemplate():
