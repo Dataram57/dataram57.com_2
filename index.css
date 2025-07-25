@@ -89,7 +89,7 @@ body > header{
 }
 
 .dark-mode
-header{
+body > header{
     /*Visuals*/
     background-color: black;
     border-bottom: 0.1rem solid white;
@@ -286,9 +286,17 @@ Dark mode button
 #dark_mode_button{
     color: black;
     font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}#dark_mode_button::after{
+    content: "☀️";
 }
 .dark-mode
 #dark_mode_button{
+    
     color: white;
     font-family: 'Courier New', Courier, monospace;
+}
+.dark-mode
+#dark_mode_button::after{
+    content: "🌙";
 }
