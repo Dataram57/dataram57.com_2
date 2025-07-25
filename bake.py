@@ -45,6 +45,14 @@ with open(templatePath, "r", encoding="utf-8") as file:
         if not href.startswith(("http://", "https://", "/", "#")):
             toCopy.append(href)
             tag["src"] = f"/{href}"
+    #bake
+    for tag in soup.find_all("bake", copy=True):
+        href = tag["copy"]
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
+            tag["copy"] = f"/{href}"
+        tag.decompose()
     #save into a new template
     templatePath = templatePath + ".temp"
     with open(templatePath, "w", encoding="utf-8") as f:
@@ -130,6 +138,14 @@ for path in elems:
             if not href.startswith(("http://", "https://", "/", "#")):
                 toCopy.append(href)
                 tag["src"] = dirPath / href
+        #bake
+        for tag in soup.find_all("bake", copy=True):
+            href = tag["copy"]
+            # Skip absolute URLs or already rewritten ones
+            if not href.startswith(("http://", "https://", "/", "#")):
+                toCopy.append(href)
+            tag.decompose()
+                
         #copy
         for cpPath in toCopy:
             dirPath = (path / cpPath / "..").resolve()
