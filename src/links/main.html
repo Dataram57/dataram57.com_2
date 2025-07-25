@@ -8,8 +8,8 @@ article > section{
 }
 
 article > section > div{
-    outline: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.618);
+    outline: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.618);
     margin: 1rem;
     padding: 1rem;
     display: block;
@@ -18,6 +18,13 @@ article > section > div{
     align-items: center;
     width: calc(100% / 5 - (2 * 1rem + 2 * 1rem));
 }
+
+.dark-mode
+article > section > div{
+    outline: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.618);
+}
+
 /*
 const screen_sizes = [0, 576, 768, 992, 1200];
 const screen_sizes_names = ['xs', 'sm', 'md', 'lg', 'xl'];
@@ -36,15 +43,19 @@ article > section > div {
     width: calc(100% / 2 - (2 * 1rem + 2 * 1rem));
 }}
 
-
 article > section > div > a {
     width: 100%;
-    color: white;
+    color: black;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     font-size: large;
     height: 100%;
+}
+
+.dark-mode
+article > section > div > a {
+    color: white;
 }
 
 article > section > div > a > img {
@@ -76,9 +87,23 @@ article > table  tr > td:first-child {
 
 article > table  tr > td > a{
     font-family: 'Courier New', Courier, monospace;
-    color: yellow;
+    color: darkgreen;
     word-break: break-all;
     text-align: right;
+}
+
+.dark-mode
+article > table  tr > td > a{
+    color: yellow;
+}
+
+img.invert{
+    filter: invert(1);
+}
+
+.dark-mode
+img.invert{
+    filter: none;
 }
 
 </style>
@@ -88,49 +113,49 @@ article > table  tr > td > a{
     <section>
         <div>
             <a target="_blank" href="https://medium.com/@dataram57" >
-                <img src="https://dataram57.com/img/media-md-medium.png">
+                <img class="invert" src="media-md-medium.png">
                 <label>Medium</label>
             </a>
         </div>
         <div>
             <a target="_blank" href="https://dataram57.neocities.org/">
-                <img src="https://dataram57.com/img/media-md-neocities.png">
+                <img src="media-md-neocities.png">
                 <label>NeoCities</label>
             </a>
         </div>
         <div>
             <a target="_blank" href="https://www.artstation.com/dataram57">
-                <img src="https://dataram57.com/img/media-md-artstation.png">
+                <img src="media-md-artstation.png">
                 <label>ArtStation</label>
             </a>
         </div>
         <div>
             <a target="_blank" href="https://github.com/Dataram57/">
-                <img src="https://dataram57.com/img/media-md-github.png">
+                <img class="invert" src="media-md-github.png">
                 <label>GitHub</label>
             </a>
         </div>
         <div>
             <a style="color: red;" target="_blank" href="https://www.youtube.com/dataram57">
-                <img src="https://dataram57.com/img/media-md-youtube.png">
+                <img src="media-md-youtube.png">
                 <label>YouTube</label>
             </a>
         </div>
         <div>
             <a style="color: orange;" target="_blank" href="https://soundcloud.com/dataram57">
-                <img src="https://dataram57.com/img/media-md-soundcloud.png">
+                <img src="media-md-soundcloud.png">
                 <label>SoundCloud</label>
             </a>
         </div>
         <div>
             <a style="color: crimson;" target="_blank" href="https://dataram-57.itch.io/">
-                <img src="https://dataram57.com/img/media-md-itch_io.png">
+                <img class="invert" src="media-md-itch_io.png">
                 <label>Itch.Io</label>
             </a>
         </div>
         <div>
             <a style="color: greenyellow;" target="_blank" href="https://gamejolt.com/@Dataram57">
-                <img src="https://dataram57.com/img/media-md-gamejolt.png">
+                <img src="media-md-gamejolt.png">
                 <label>Game Jolt</label>
             </a>
         </div>
@@ -158,13 +183,13 @@ article > table  tr > td > a{
     <section>
         <div>
             <a target="_blank" href="https://www.slipseer.com/index.php?members/dataram57.225/" >
-                <img src="https://dataram57.com/img/media-md-slipseer.png">
+                <img src="media-md-slipseer.png">
                 <label>Slipgate Sightseer</label>
             </a>
         </div>
         <div>
             <a style="color: cornflowerblue;" target="_blank" href="https://twitter.com/Dataram_57" >
-                <img src="https://dataram57.com/img/media-md-twitter.png">
+                <img src="media-md-twitter.png">
                 <label>Twitter</label>
             </a>
         </div>

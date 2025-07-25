@@ -105,6 +105,39 @@ for path in elems:
         #Process
         process_template.Process(path, soup)
 
+        #copy relative files mentioned
+        toCopy.clear()
+        dirPath = path.relative_to(sourcePath)
+        #link
+        for tag in soup.find_all("link", href=True):
+            href = tag["href"]
+            # Skip absolute URLs or already rewritten ones
+            if not href.startswith(("http://", "https://", "/", "#")):
+                toCopy.append(href)
+                tag["href"] = Path("/") / dirPath / href
+        #script
+        for tag in soup.find_all("script", src=True):
+            href = tag["src"]
+            print(tag)
+            # Skip absolute URLs or already rewritten ones
+            if not href.startswith(("http://", "https://", "/", "#")):
+                toCopy.append(href)
+                tag["src"] = dirPath / href
+        #img
+        for tag in soup.find_all("img", src=True):
+            href = tag["src"]
+            # Skip absolute URLs or already rewritten ones
+            if not href.startswith(("http://", "https://", "/", "#")):
+                toCopy.append(href)
+                tag["src"] = dirPath / href
+        #copy
+        for cpPath in toCopy:
+            dirPath = (path / cpPath / "..").resolve()
+            if not dirPath.exists():
+                os.makedirs(dirPath)
+            print(f"Copying {path / cpPath} ==== {outputPath / cpPath}")
+            shutil.copy(path / cpPath, outputPath / cpPath)
+        
         #save generated html
         outputPath = outputPath / "index.html"
         print(f"Writing bake✍️  {outputPath}")
