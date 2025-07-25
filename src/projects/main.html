@@ -1,0 +1,309 @@
+<style>
+article > section{
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+article > section > div{
+    outline: 1px solid black;
+    background-color: white;
+    margin: 1rem;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 3 - (2 * 1rem));
+
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.dark-mode
+article > section > div{
+    outline: 1px solid white;
+    background-color: black;
+}
+
+/*
+const screen_sizes = [0, 576, 768, 992, 1200];
+const screen_sizes_names = ['xs', 'sm', 'md', 'lg', 'xl'];
+*/
+
+@media (max-width: 992px) {
+article > section > div {
+    width: calc(100% / 2 - (2 * 1rem + 2 * 1rem));
+}}
+@media (max-width: 768px) {
+article > section > div {
+    width: calc(100% / 1 - (2 * 1rem + 2 * 1rem));
+}}
+@media (max-width: 576px) {
+article > section > div {
+    width: calc(100% / 1 - (2 * 1rem + 2 * 1rem));
+}}
+
+article > section > div > img{
+    position: absolute;
+}
+
+article > section > div > div{
+    height: calc(100% - 2rem);
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.618);
+}
+
+.dark-mode
+article > section > div > div{
+    background-color: rgba(0, 0, 0, 0.618);
+}
+
+article > section > div  a {
+    width: 100%;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: x-large;
+    height: 100%;
+}
+
+.dark-mode
+article > section > div  a {
+    color: white;
+}
+
+</style>
+<article>
+    <h1>Projects - Completed/Stable</h1>
+    <section>
+        
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/wstunnel">wstunnel</a>
+                <p>WebSocket Tunnel written in Node.js, which can tunnel protocols such as TCP.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/NeocitiesSynchronizer">Neocities Website Synchronizer</a>
+                <p>Synchronizes your Neocities website files with the ones you have locally.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/ENS-scraper">Ethereum Name Service - blockchain data scraper</a>
+                <p>This is a tool I made for myself to scrap the data about the changes of ENS domain records, from the Ethereum blockchain.</p>
+            </div>
+        </div>
+
+        <bake copy="rpi_cv.png"></bake>
+        <div style="background-image: url(&quot;/projects/rpi_cv.png&quot;);">
+            <div>
+                <a target="_blank" href="https://www.artstation.com/artwork/g0O6kK">Raspberry PI Cluster</a>
+                <p>A 3D printable model of a Raspberry Pi cluster, with support for NVME disks.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/BLOB-Tunnel">BLOB Tunnel</a>
+                <p>Self-hosted tunnel for downloading and uploading BLOBs.</p>
+            </div>
+        </div>
+        
+        <bake copy="sm220_dr57-cv.jpg"></bake>
+        <div style="background-image: url(&quot;/projects/sm220_dr57-cv.jpg&quot;);">
+            <div>
+                <a href="/projects/sm220_dr57-cv">The Mint Coast</a>
+                <p>Map made in 4/5 days, for Quake Prototype Jam # 3 : Copper Edition. Map made similar to Japanese architecture style, and with a limited amount of textures, due to the jam idea.</p>
+            </div>
+        </div>
+
+        <bake copy="ctsj2_dr57-cv.jpg"></bake>
+        <div style="background-image: url(&quot;/projects/ctsj2_dr57-cv.jpg&quot;);">
+            <div>
+                <a href="/projects/ctsj2_dr57-cv">The New Order</a>
+                <p>Map made in 9 days, for Quake Coppertone Summer Jam 2. Inspired by the Mirror's Edge game, tries to recreate the atmosphere of it while keeping the basic Quake player needs. Custom textures, sounds, models, and even music!</p>
+            </div>
+        </div>
+
+        <bake copy="dr57-itsd2-deufel-cv.jpg"></bake>
+        <div style="background-image: url(&quot;/projects/dr57-itsd2-deufel-cv.jpg&quot;);">
+            <div>
+                <a href="/projects/dr57-itsd2-deufel">Deufel's Barracks</a>
+                <p>Quake map made for the mod named "In The Shadows". First, this map aimed to show the basic example level made for this specific mod. Now, the map leads to other potential maps, that by existing together, may form a brand new episode!</p>
+            </div>
+        </div>
+        
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/Unity-BSP-Loader">Unity BSP Loader</a>
+                <p>A tool that imports .bsp files into the UnityEditor, to help you in mapping in your favorite editor known as TrenchBroom.</p>
+            </div>
+        </div>
+        
+        <bake copy="dr57-itsd2-darktrain-cv.jpg"></bake>
+        <div style="background-image: url(&quot;/projects/dr57-itsd2-darktrain-cv.jpg&quot;);">
+            <div>
+                <a href="/projects/dr57-itsd2-darktrain">Dark Train</a>
+                <p>First vanilla train-like level for Quake. It also supports mod In The Shadows, for people who like to be stealthy.</p>
+            </div>
+        </div>
+        
+        <bake copy="darkplace16-cv.jpg"></bake>
+        <div style="background-image: url(&quot;/projects/darkplace16-cv.jpg&quot;);">
+            <div>
+                <a href="/projects/rintorfer">Rintorfer</a>
+                <p>Small stealth horror game made in The Unity in a couple of days. Currently, it is demo.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://assetstore.unity.com/packages/audio/ambient/audioroom-184013">AudioRoom</a>
+                <p>A Unity component to make spaces where specific sounds play at the same level. Useful for rains, drones, nature, or any other soundscapes that you wish to fill in 3D. Also helps optimize the number of audio sources in the game, and pushes your scene to be cleaner in the hierarchy.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://twitter.com/DarkPlace16">@DarkPlace16</a>
+                <p>It all started on a day when I was asked to draw my world. Now I continue drawing this world from time to time.</p>
+            </div>
+        </div>
+        
+        <div>
+            <div>
+                <a target="_blank" href="https://gamejolt.com/@Dataram57/games">Old Games...</a>
+                <p>Here are my old games that I made and released publicly.</p>
+            </div>
+        </div>
+    </section>
+</article>
+
+<article>
+    <h1>Projects - School</h1>
+    <section>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/jpo_lab2">Java Weather App</a>
+                <p>Java application to view weather forecasts and archives from the Open-meteo API.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/jpo_lab">C++ Weather App</a>
+                <p>App that makes graphs of data from various sensors from around Poland.</p>
+            </div>
+        </div>
+
+    </section>
+</article>
+
+<article>
+    <h1>Projects - Fancy, Visualizations</h1>
+    <section>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/dataram57.com_2">dataram57.com Version 2</a>
+                <p>Second version of my website</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/dotbackupinfo">.backupinfo</a>
+                <p>A Python tool for backing up your stuff via a single file.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/merkle-tree">Merkle Tree</a>
+                <p>Merkle Tree - Proofer and Verifier example.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/xorcrypt">xorcrypt</a>
+                <p>Simple tiny XOR encryption tool, based on infinite length keys.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/TinySOCK5">Tiny SOCK5</a>
+                <p>Tiny SOCK5 server, written in NodeJS.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/Rope">Rope</a>
+                <p>Draws the rope of length L is attached at points A and B.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/PGP-tool">PGP tool</a>
+                <p>Handy dandy tool for private messaging.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/web-raymarching">web-raymarching</a>
+                <p>Raymarching test</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/dr57-quake-basic">dr57-quake-basic</a>
+                <p>Mod for Quake 1 which brings new objects.</p>
+            </div>
+        </div>
+    </section>
+</article>
+
+<article>
+    <h1>Projects - Failed, Abandoned</h1>
+    <section>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://github.com/Dataram57/ethuardo_docs">Ethuardo.com</a>
+                <p>It was meant to be a Web2 marketplace based on cryptocurrencies. Maybe one day I will return to it...</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://dataram-57.itch.io/tabowo">Tabowo</a>
+                <p>Basically a never finished clone of libre VRChat.</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <a target="_blank" href="https://gamejolt.com/games/black-hole/156360">Night Web</a>
+                <p>Wasted 3 years of my life producing this game without any plan.</p>
+            </div>
+        </div>
+
+    </section>
+</article>
+
+<article>
+    <h1>Projects - Other...</h1>
+    <p>Perhaps you will find them on my <a target="_blank" href="https://github.com/Dataram57">github</a> profile or via my <a href="/links">links</a>.</p>
+</article>
