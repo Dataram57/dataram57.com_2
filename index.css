@@ -42,6 +42,12 @@ body > #background{
     justify-content: center;
 }
 
+body > #background > img{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+}
+
 /*================================
 Background Window
 */
