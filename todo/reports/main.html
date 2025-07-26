@@ -1,0 +1,29 @@
+<bake copy="info.php"></bake>
+<bake copy="read.php"></bake>
+<bake copy="db.dat"></bake>
+<style>
+
+</style>
+<script>
+
+let content = '';
+
+window.onload = () => {
+    fetch("info.php").then(async e => {
+        info = JSON.parse(e.text());
+        Math.floor(info.size / info.chunkLength); 
+
+    }).catch(e => {
+
+    });
+};
+
+</script>
+<article>
+    <h1>Reports</h1>
+    <p>This page uses JS.</p>
+    <label><span id="tag_currentPage">???</span> / <span id="tag_lastPage">???</span></label>
+    <div id="reports">
+        sdsd
+    </div>
+</article>
