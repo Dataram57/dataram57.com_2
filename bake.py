@@ -115,7 +115,7 @@ for path in elems:
 
         #copy relative files mentioned
         toCopy.clear()
-        dirPath = path.relative_to(sourcePath)
+        dirPath = Path("/") / path.relative_to(sourcePath)
         #link
         for tag in soup.find_all("link", href=True):
             href = tag["href"]
@@ -148,11 +148,12 @@ for path in elems:
                 
         #copy
         for cpPath in toCopy:
-            dirPath = (path / cpPath / "..").resolve()
-            if not dirPath.exists():
-                os.makedirs(dirPath)
-            print(f"Copying {path / cpPath} ==== {outputPath / cpPath}")
-            shutil.copy(path / cpPath, outputPath / cpPath)
+            if (path / cpPath).exists():
+                dirPath = (path / cpPath / "..").resolve()
+                if not dirPath.exists():
+                    os.makedirs(dirPath)
+                print(f"Copying {path / cpPath} ==== {outputPath / cpPath}")
+                shutil.copy(path / cpPath, outputPath / cpPath)
         
         #save generated html
         outputPath = outputPath / "index.html"
