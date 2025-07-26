@@ -14,16 +14,18 @@ def Process(sourcePath, soup):
     print("Processing...")
 
     #funcs
-    def TryReplaceElement(name, element):
+    def TryReplaceElement(name, element, add=False):
         if element:
             path = sourcePath / name
             if path.is_file():
                 content = GetContent(path)         
                 if content:
-                    element.clear()
+                    if not add:
+                        element.clear()
                     element.append(BeautifulSoup(content, "html.parser"))
 
     #basic ones
+    TryReplaceElement("head.html", soup.find("head"), True)
     TryReplaceElement("background.html", soup.find(id="background"))
     TryReplaceElement("background_window.html", soup.find(id="background_window"))
     TryReplaceElement("header.html", soup.find("header"))
