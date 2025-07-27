@@ -19,6 +19,10 @@ if not config:
     print("Couldn't load config")
     exit()
 
+#remove dir
+if os.path.isdir(bakePath):
+    shutil.rmtree(bakePath)
+
 #convert template
 toCopy = []
 with open(templatePath, "r", encoding="utf-8") as file:

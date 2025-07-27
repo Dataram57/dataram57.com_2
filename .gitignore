@@ -1,3 +1,6 @@
 __pycache__/**
 result/**
 *.dat
+hashes.dim
+passhash.key
+admin_client-config.json
