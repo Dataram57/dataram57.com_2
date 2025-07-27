@@ -12,6 +12,11 @@ This is my second version of my website.
 - No separate services like databases or making calls.
     - Use Files or ZK.
 
+# TODO
+
+- Admin Authentication via Fiat-Shamir/RSA ZK proof of knowing a private key to produce public key.
+- Ignore files/dirs list. 
+
 # Pipeline
 
 1. Module processing (optional) - HTML components building
