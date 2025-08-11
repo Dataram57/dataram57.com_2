@@ -95,81 +95,80 @@ for i, path in enumerate(config["scripts"]):
     print(f"Imported {name}: {module}")
     
 #walk over dirs
-elems = [Path(sourcePath)] + list(Path(sourcePath).iterdir())
+elems = [Path(sourcePath)] + [p for p in Path(sourcePath).rglob("*") if p.is_dir()]
 for path in elems:
-    if path.is_dir():
-        #preparation
-        outputPath = Path(bakePath) / path.relative_to(sourcePath)
-        print(f"Preparing folder📁 {path} ---> {outputPath}")
-        if not outputPath.exists():
-            os.makedirs(outputPath)
+    #preparation
+    outputPath = Path(bakePath) / path.relative_to(sourcePath)
+    print(f"Preparing folder📁 {path} ---> {outputPath}")
+    if not outputPath.exists():
+        os.makedirs(outputPath)
 
-        #module start
-        print(f"Starting scripts✨")
-        for module in scripts:
-            if hasattr(module, "Start"):
-                module.Start(path)
+    #module start
+    print(f"Starting scripts✨")
+    for module in scripts:
+        if hasattr(module, "Start"):
+            module.Start(path)
 
-        #bake html
-        print(f"Baking 👨‍🍳")
-        LoadTemplate()
+    #bake html
+    print(f"Baking 👨‍🍳")
+    LoadTemplate()
 
-        #Process
-        process_template.Process(path, soup)
+    #Process
+    process_template.Process(path, soup)
 
-        #copy relative files mentioned
-        toCopy.clear()
-        dirPath = Path("/") / path.relative_to(sourcePath)
-        #link
-        for tag in soup.find_all("link", href=True):
-            href = tag["href"]
-            # Skip absolute URLs or already rewritten ones
-            if not href.startswith(("http://", "https://", "/", "#")):
-                toCopy.append(href)
-                tag["href"] = Path("/") / dirPath / href
-        #script
-        for tag in soup.find_all("script", src=True):
-            href = tag["src"]
-            print(tag)
-            # Skip absolute URLs or already rewritten ones
-            if not href.startswith(("http://", "https://", "/", "#")):
-                toCopy.append(href)
-                tag["src"] = dirPath / href
-        #img
-        for tag in soup.find_all("img", src=True):
-            href = tag["src"]
-            # Skip absolute URLs or already rewritten ones
-            if not href.startswith(("http://", "https://", "/", "#")):
-                toCopy.append(href)
-                tag["src"] = dirPath / href
-        #bake
-        for tag in soup.find_all("bake", copy=True):
-            href = tag["copy"]
-            # Skip absolute URLs or already rewritten ones
-            if not href.startswith(("http://", "https://", "/", "#")):
-                toCopy.append(href)
-            tag.decompose()
-                
-        #copy
-        for cpPath in toCopy:
-            if (path / cpPath).exists():
-                dirPath = (path / cpPath / "..").resolve()
-                if not dirPath.exists():
-                    os.makedirs(dirPath)
-                print(f"Copying {path / cpPath} ==== {outputPath / cpPath}")
-                shutil.copy(path / cpPath, outputPath / cpPath)
-        
-        #save generated html
-        outputPath = outputPath / "index.html"
-        print(f"Writing bake✍️  {outputPath}")
-        with open(outputPath, "w", encoding="utf-8") as file:
-            file.write(str(soup))
+    #copy relative files mentioned
+    toCopy.clear()
+    dirPath = Path("/") / path.relative_to(sourcePath)
+    #link
+    for tag in soup.find_all("link", href=True):
+        href = tag["href"]
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
+            tag["href"] = Path("/") / dirPath / href
+    #script
+    for tag in soup.find_all("script", src=True):
+        href = tag["src"]
+        print(tag)
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
+            tag["src"] = dirPath / href
+    #img
+    for tag in soup.find_all("img", src=True):
+        href = tag["src"]
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
+            tag["src"] = dirPath / href
+    #bake
+    for tag in soup.find_all("bake", copy=True):
+        href = tag["copy"]
+        # Skip absolute URLs or already rewritten ones
+        if not href.startswith(("http://", "https://", "/", "#")):
+            toCopy.append(href)
+        tag.decompose()
+            
+    #copy
+    for cpPath in toCopy:
+        if (path / cpPath).exists():
+            dirPath = (path / cpPath / "..").resolve()
+            if not dirPath.exists():
+                os.makedirs(dirPath)
+            print(f"Copying {path / cpPath} ==== {outputPath / cpPath}")
+            shutil.copy(path / cpPath, outputPath / cpPath)
+    
+    #save generated html
+    outputPath = outputPath / "index.html"
+    print(f"Writing bake✍️  {outputPath}")
+    with open(outputPath, "w", encoding="utf-8") as file:
+        file.write(str(soup))
 
-        #module end
-        print(f"Ending scripts🛏️")
-        for module in scripts:
-            if hasattr(module, "End"):
-                module.End(path)
+    #module end
+    print(f"Ending scripts🛏️")
+    for module in scripts:
+        if hasattr(module, "End"):
+            module.End(path)
 
 #remove temp template
 os.remove(templatePath)
