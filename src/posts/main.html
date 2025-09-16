@@ -1,0 +1,94 @@
+<style>
+    article > section{
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    article > section > div{
+        outline: 1px solid black;
+        background-color: white;
+        margin: 1rem;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% / 3 - (2 * 1rem));
+    
+    
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    .dark-mode
+    article > section > div{
+        outline: 1px solid white;
+        background-color: black;
+    }
+    
+    /*
+    const screen_sizes = [0, 576, 768, 992, 1200];
+    const screen_sizes_names = ['xs', 'sm', 'md', 'lg', 'xl'];
+    */
+    
+    @media (max-width: 992px) {
+    article > section > div {
+        width: calc(100% / 3 - (2 * 1rem + 2 * 1rem));
+    }}
+    @media (max-width: 768px) {
+    article > section > div {
+        width: calc(100% / 2 - (2 * 1rem + 2 * 1rem));
+    }}
+    @media (max-width: 576px) {
+    article > section > div {
+        width: calc(100% / 1 - (2 * 1rem + 2 * 1rem));
+    }}
+    
+    article > section > div > img{
+        position: absolute;
+    }
+    
+    article > section > div > div{
+        height: calc(100% - 2rem);
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.618);
+    }
+    
+    .dark-mode
+    article > section > div > div{
+        background-color: rgba(0, 0, 0, 0.618);
+    }
+    
+    article > section > div  a {
+        width: 100%;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: large;
+        height: 100%;
+    }
+    
+    .dark-mode
+    article > section > div  a {
+        color: white;
+    }
+    
+</style>
+<article>
+    <h1>Posts</h1>
+    <section>
+        <div>
+            <div>
+                <a href="/posts/1">Report 11/8/2025</a>
+                <p>Status: My eyes are becoming Chinese<br/>TLDR: Mostly about my Quake engine game.</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <a href="/posts/0">My first post here</a>
+                <p>Bla Bla Bla...</p>
+            </div>
+        </div>
+    </section>
+</article>
