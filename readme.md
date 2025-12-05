@@ -8,9 +8,11 @@ This is my second version of my website.
     - HTML, CSS files preferred
 - Scripts as low as possible
     - Keep JS files individually for each role.
-    - PHP is fine, but keep PHP files also individually for each role.
+    - PHP is fine, but keep PHP files also individually for each role. ***I plan to move my website on free hosting servers, so PHP or server side coding might not be possible.***
 - No separate services like databases or making calls.
     - Use Files or ZK.
+
+## Lessons
 
 # TODO
 
