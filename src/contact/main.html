@@ -20,10 +20,18 @@ article > table  tr > td > a{
     word-break: break-all;
     text-align: right;
 }
-
 .dark-mode
 article > table  tr > td > a{
     color: yellow;
+}
+
+article > table  tr > td > a.PublicKey{
+    color: blue;
+    padding: 1rem 0;
+}
+.dark-mode
+article > table  tr > td > a.PublicKey{
+    color: chartreuse;
 }
 
 </style>
@@ -42,19 +50,14 @@ article > table  tr > td > a{
         <tr>
             <td>Technical Support:<td>
             <td><a href="mailto:support@dataram57.com" >support@dataram57.com</a></td>
+            <bake copy="pgp-support@dataram57.com.txt"></bake>
+            <td><a href="pgp-support@dataram57.com.txt" target="_blank" class="PublicKey">(PGP Public Key)</a></td>
         </tr>
         <tr>
             <td>General:<td>
             <td><a href="mailto:contact@dataram57.com" >contact@dataram57.com</a></td>
+            <bake copy="pgp-contact@dataram57.com.txt"></bake>
+            <td><a href="pgp-contact@dataram57.com.txt" target="_blank" class="PublicKey">(PGP Public Key)</a></td>
         </tr>
     </table>
-    
-    <h1>Encryption?</h1>
-    <table>
-        <tr>
-            <td>PGP<td>
-            <td><a>...</a></td>
-        </tr>
-    </table>
-
 </article>
