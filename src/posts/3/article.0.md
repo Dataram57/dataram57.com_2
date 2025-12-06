@@ -14,9 +14,4 @@ So when it comes to what's next:
 - Joining society, I think.
 
 ### Enjoy:
-<style>
-    main > article img{
-        max-height: 512px;
-    }
-</style>
 ![](pizza.jpg)

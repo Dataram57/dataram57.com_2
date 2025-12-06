@@ -312,8 +312,8 @@ main > article a{
 }
 
 main > article img{
-    max-width: 100%;
-    width: fit-content;
+    max-height: 512px;
+    width: auto;
 }
 
 /*################################################################
