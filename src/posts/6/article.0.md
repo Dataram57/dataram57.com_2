@@ -1,0 +1,8 @@
+# Plans for the future
+
+As my cryptography mania slowly fades, I am almost in the 6th semester out of 7, I see some of my colleagues having a job, I start to think that it's high time to start changing or preparing myself for what's about to come. So here I present my next goals for the future:
+
+- ***Changing Hosting Services*** - Yes, 200 PLN per year might sound cheap... but I plan to test a different hosting provider that is a bit cheaper and accepts payments in crypto.
+- ***Small Anonymous Voting Platform*** - I know that I should end with crypto now, but I have just realized that nobody has any interests in visiting or using my stuff. So to "spread my sovl" and keep me somehow "alive" in some people's minds, providing a unique tool might be a good strategy.
+- ***Looking for a job*** - I need to make money out of something, so I will have to polish up the skills job offers are looking for. I suspect I will have to polish my Java, Typescript languages, as well as learn additional tools and frameworks.
+- ***Mystic*** - I have recently added some custom animation/standing features for AI to perform when they reach specific path corner. I have added quite a small but important number of polishes and features that are important for the long-term development of this game. I think I will be considering working on this game as a form of relaxation or rather therapy (especially the mapping field).
