@@ -99,12 +99,26 @@ elems = [Path(sourcePath)] + [p for p in Path(sourcePath).rglob("*") if p.is_dir
 for path in elems:
     #preparation
     outputPath = Path(bakePath) / path.relative_to(sourcePath)
-    print(f"Preparing folder📁 {path} ---> {outputPath}")
+    print(f"Preparing folder 📁 {path} ---> {outputPath}")
     if not outputPath.exists():
         os.makedirs(outputPath)
 
+    #check if raw page
+    if (path / "index.html").is_file():
+        print(f"Raw page detected 📜")
+        #copy all files from this folder to the output folder
+        for item in path.iterdir():
+            dest = outputPath / item.name
+            print(f"📜:", f"Copying {item} ==== {dest})")
+            if item.is_file():
+                shutil.copy2(item, dest)
+            elif item.is_dir():
+                shutil.copytree(item, dest, dirs_exist_ok=True)
+
+        continue
+
     #module start
-    print(f"Starting scripts✨")
+    print(f"Starting scripts ✨")
     for module in scripts:
         if hasattr(module, "Start"):
             module.Start(path)
@@ -160,12 +174,12 @@ for path in elems:
     
     #save generated html
     outputPath = outputPath / "index.html"
-    print(f"Writing bake✍️  {outputPath}")
+    print(f"Writing bake ✍️  {outputPath}")
     with open(outputPath, "w", encoding="utf-8") as file:
         file.write(str(soup))
 
     #module end
-    print(f"Ending scripts🛏️")
+    print(f"Ending scripts 🛏️")
     for module in scripts:
         if hasattr(module, "End"):
             module.End(path)
