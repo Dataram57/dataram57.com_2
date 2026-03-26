@@ -12,7 +12,11 @@ This is my second version of my website.
 - No separate services like databases or making calls.
     - Use Files or ZK.
 
-## Lessons
+## Quick testing:
+
+```
+python3 -m http.server 8000 --directory ./result
+```
 
 # TODO
 
@@ -24,3 +28,4 @@ This is my second version of my website.
 1. Module processing (optional) - HTML components building
 2. Oven picking - HTML component picking
 3. Baking HTML
+

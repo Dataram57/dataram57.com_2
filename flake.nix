@@ -22,7 +22,7 @@
                     pkgs.python3Packages.markdown
                     pkgs.python3Packages.beautifulsoup4
                     pkgs.python3Packages.requests
-                    dr57-scv.default
+                    #dr57-scv.default
                 ];
             };
             
