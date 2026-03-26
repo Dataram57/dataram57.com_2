@@ -4,3 +4,4 @@ result/**
 hashes.dim
 passhash.key
 admin_client-config.json
+src/cv/*
