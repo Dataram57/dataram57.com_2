@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <title>CV</title>
+    </head>
+    <body>
+        <!-- ================================ START ================================ -->
+        <div id="background">
+        </div>
+        <div id="background_window"></div>
+        <nav>
+            <div>
+                <header>Hiram Abiff</header>
+                <p>Master Craftsman & Chief Architect</p>
+            </div>
+        </nav>
+        <main>
+    <div class="cv-container">
+        
+        <!-- LEFT COLUMN -->
+        <aside class="cv-sidebar">
+            <section>
+                <header>Profile</header>
+                <p>
+                    Master craftsman and architect known for precision,
+                    leadership, and sacred construction expertise.
+                </p>
+            </section>
+
+            <section>
+                <header>Skills</header>
+                <ul>
+                    <li>Architectural Design</li>
+                    <li>Metallurgy</li>
+                    <li>Project Management</li>
+                    <li>Leadership</li>
+                </ul>
+            </section>
+
+            <section>
+                <header>Education</header>
+                <p><strong>Apprenticeship</strong></p>
+                <p>Tyre, Phoenicia</p>
+            </section>
+        </aside>
+
+        <!-- RIGHT COLUMN -->
+        <section class="cv-main">
+            <article>
+                <header>Experience</header>
+                <p><strong>Chief Architect</strong></p>
+                <p>Royal Court of King Solomon</p>
+                <ul>
+                    <li>Led temple construction</li>
+                    <li>Managed workforce</li>
+                    <li>Developed casting techniques</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>Key Projects</header>
+                <ul>
+                    <li>Solomon’s Temple</li>
+                    <li>Bronze Pillars</li>
+                    <li>Molten Sea Basin</li>
+                </ul>
+            </article>
+        </section>
+
+    </div>
+</main>
+        <!-- ================================ END ================================ -->
+        <footer>
+            <script>
+                const buttonSavePDF_click = async (tag) => {
+                    tag = tag.closest("footer");
+                    tag.hidden = true;
+                    await window.print();   //works good on Brave
+                    tag.hidden = false;
+                };
+            </script>
+            <button onclick="buttonSavePDF_click(this);">Save as .PDF</button>
+        </footer>
+    </body>
+</html>
