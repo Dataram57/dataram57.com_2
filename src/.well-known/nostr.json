@@ -1,0 +1,15 @@
+{
+    "names": {
+        "me": "5997b80de0db51f5e99eaf6f731464d8726d1523887399a21b8feb08a86f6555"
+    },
+    "relays": {
+        "5997b80de0db51f5e99eaf6f731464d8726d1523887399a21b8feb08a86f6555": [
+            "wss://relay.ditto.pub/",
+            "wss://relay.dreamith.to/",
+            "wss://relay.primal.net/",
+            "wss://relay.damus.io/",
+            "wss://nos.lol/"
+        ]
+    }
+}
+
