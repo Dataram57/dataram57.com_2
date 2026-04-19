@@ -1,9 +1,9 @@
 {
     "names": {
-        "me": "5997b80de0db51f5e99eaf6f731464d8726d1523887399a21b8feb08a86f6555"
+        "me": "85b78f8d8a6d6ba8e1a42efdf6cbd1e66d482c864d4ae9e5a3979fa052014e13"
     },
     "relays": {
-        "5997b80de0db51f5e99eaf6f731464d8726d1523887399a21b8feb08a86f6555": [
+        "85b78f8d8a6d6ba8e1a42efdf6cbd1e66d482c864d4ae9e5a3979fa052014e13": [
             "wss://relay.ditto.pub/",
             "wss://relay.dreamith.to/",
             "wss://relay.primal.net/",
